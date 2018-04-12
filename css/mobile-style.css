@@ -1,0 +1,95 @@
+@media (orientation: portrait) {
+    :root {
+        --rem-vh: calc(100vh - 100vw);
+        --rem-vh-half: calc((100vh - 100vw)/2);
+        --top-indent: calc(var(--rem-vh-half) + 0.5vw);
+    }
+    #section {
+        vertical-align: middle;
+    }
+    #startScr {
+        padding-top: 33vw;
+    }
+    #startScr button {
+        height: 33vw;
+        width: 49.5vw;
+        font-size: 9vw;
+    }
+    #chooseSideScr {
+        padding-top: 0;
+    }
+    #chooseSideScr div {
+        font-size: 34vw;
+        height: 34.5vw;
+        line-height: 34vw;
+    }
+    #chooseSideScr button {
+        height: 30vw;
+        width: 30vw;
+        font-size: 14vw;
+    }
+    #chooseSideScr span {
+        display: inline-block;
+        font-size: 14vw;
+        height: 30vw;
+        line-height: 18vw;
+        padding: 0 2vw;
+        padding-right: 3vw;
+    }
+    #backBtn {
+        left: 31vw;
+        height: 20vw !important;
+        width: 37vw !important;
+        text-align: left;
+        font-size: 4vh !important;
+    }
+    #playingField {
+        display: block;
+        height: 99vw;
+        width: 99vw;
+        margin-top: var(--top-indent);
+        margin-left: 0.5vw;
+    }
+    .ln {
+        height: 33vw;
+    }
+    .cell {
+        height: 33vw;
+        width: 33vw;
+        font-size: 29vw;
+    }
+    .splashScr {
+        top: 0;
+        height: 99vw;
+        width: 99vw;
+        margin-top: var(--top-indent);
+    }
+    .restartBtns {
+        position: absolute;
+        margin: 0;
+        height: calc(var(--top-indent) - 0.3vw);
+        width: 33vw;
+        left: 33.5vw;
+    }
+    #replayBtn {
+        top: 0;
+        margin: 0;
+        margin-bottom: 0.3vw;
+        border-radius: 0;
+        border-top-right-radius: 2vh;
+        border-top-left-radius: 2vh;
+    }
+    #startNewGameBtn {
+        bottom: 0;
+        margin: 0;
+        margin-top: 0.3vw;
+        border-radius: 0;
+        border-bottom-right-radius: 2vh;
+        border-bottom-left-radius: 2vh;
+    }
+    #endScr {
+        padding-top: 39.5vw;
+        line-height: 20vw;
+        font-size: 20vw;
+    }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AG Tic Tac Toe Game</title>
+        <meta name="viewport" content="width=device-width">
+        <meta name="author" content="A.Gurin">
+        <meta name="description" content="tic tac toe game">
+        <meta name="keywords" content="tic tac toe">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/mobile-style.css">
+    </head>
+    <body>
+        <article>
+            <h1>AG Tic Tac Toe Game</h1>
+            <section>
+                <h2>Game screen</h2>
+                <button id="replayBtn" class="restartBtns">Replay</button>
+                <div id="playingField">
+                    <div id="startScr" class="splashScr">
+                        <button id="onePlayerBtn" class="modeBtns">1 Player</button>
+                        <button id="twoPlayersBtn" class="modeBtns">2 Players</button>
+                    </div>
+                    <div id="chooseSideScr" class="splashScr">
+                        <div>?</div>
+                        <button id="xBtn" class="modeBtns sideBtns">X</button>
+                        <span>OR</span>
+                        <button id="oBtn" class="modeBtns sideBtns">0</button>
+                        <button id="backBtn">&nbsp;&lArr; Back</button>
+                    </div>
+                    <div id="endScr" class="splashScr">
+                    </div>
+                    <div id="ln1" class="ln">
+                        <div id="ln1Col1" class="ln1 col1 cell corner"></div>
+                        <div id="ln1Col2" class="ln1 col2 cell side"></div>
+                        <div id="ln1Col3" class="ln1 col3 cell corner"></div>
+                    </div>
+                    <div id="ln2" class="ln">
+                        <div id="ln2Col1" class="ln2 col1 cell side"></div>
+                        <div id="ln2Col2" class="ln2 col2 cell center"></div>
+                        <div id="ln2Col3" class="ln2 col3 cell side"></div>
+                    </div>
+                    <div id="ln3" class="ln">
+                        <div id="ln3Col1" class="ln3 col1 cell corner"></div>
+                        <div id="ln3Col2" class="ln3 col2 cell side"></div>
+                        <div id="ln3Col3" class="ln3 col3 cell corner"></div>
+                    </div>
+                </div>
+                <button id="startNewGameBtn" class="restartBtns">Start new game</button>
+            </section>
+        </article>
+    </body>
+    <script type="text/javascript" src="js/main.js">
+    </script>
+    <script type="text/javascript" src="js/ai.js">
+    </script>
+</html>

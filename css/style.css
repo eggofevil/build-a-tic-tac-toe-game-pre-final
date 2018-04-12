@@ -1,0 +1,147 @@
+* {
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #191919;
+    font-weight: bolder;
+    text-shadow: 0.2vh 0.2vh 0vh #ffffff,
+        -0.1vh -0.1vh 0vh #ffffff;
+}
+section {
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    background: #A9A9A9;
+}
+#playingField {
+    display: inline-block;
+    height: 72vh;
+    width: 72vh;
+    margin-top: 14vh;
+    border-radius: 2vh;
+    background: #d3d3d3;
+    overflow: hidden;
+    font-family: sans-serif;
+    box-shadow: 0.1vh 0.1vh 0vh #0c0c0c,
+        -0.1vh -0.1vh 0vh #0c0c0c;
+}
+.ln {
+    height: 24vh;
+    width: 100%;
+
+}
+.cell {
+    display: inline-block;
+    height: 100%;
+    width: 24vh;
+    font-size: 21vh;
+    font-weight: normal;
+    vertical-align: bottom;
+    text-align: center;
+}
+.ln1 {
+    border-bottom: 0.5vh solid #A9A9A9;
+}
+.ln2 {
+    border-top: 0.5vh solid #A9A9A9;
+    border-bottom: 0.5vh solid #A9A9A9;
+}
+.ln3 {
+    border-top: 0.5vh solid #A9A9A9;
+}
+.col1 {
+    border-right: 0.5vh solid #A9A9A9;
+}
+.col2 {
+    border-left: 0.5vh solid #A9A9A9;
+    border-right: 0.5vh solid #A9A9A9;
+}
+.col3 {
+    border-left: 0.5vh solid #A9A9A9;
+}
+.splashScr {
+    position: absolute;
+    top: 14vh;
+    height: 72vh;
+    width: 72vh;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    background: #d3d3d3;
+    border-radius: 2vh;
+}
+#startScr {
+    padding-top: 29vh;
+}
+button {
+    border-width: 0.5vh;
+    background: #999999;
+    box-shadow: 0.1vh 0.1vh 0vh #0c0c0c,
+        -0.1vh -0.1vh 0vh #0c0c0c;
+}
+#startScr button {
+    height: 14vh;
+    width: 36vh;
+    font-size: 6.5vh;
+}
+#chooseSideScr {
+    display: none;
+    padding-top: 10vh;
+}
+#chooseSideScr div {
+    font-size: 16vh;
+    height: 20vh;
+    line-height: 20vh;
+}
+#chooseSideScr button {
+    height: 14vh;
+    width: 14vh;
+    font-size: 9vh;
+}
+#chooseSideScr span {
+    display: inline-block;
+    font-size: 9vh;
+    height: 14vh;
+    line-height: 12vh;
+    padding: 0 1vh;
+}
+#backBtn {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 26vh;
+    height: 10vh !important;
+    width: 20vh !important;
+    text-align: left;
+    font-size: 4vh !important;
+}
+#endScr {
+    display: none;
+    background: none;
+    padding-top: 28vh;
+    line-height: 16vh;
+    font-size: 14.5vh;
+    font-weight: normal;
+    text-shadow: 0.4vh 0.4vh 0.5vh #000000,
+        -0.1vh -0.1vh 0vh #000000;
+}
+.restartBtns {
+    display: none;
+    font-size: 4vh;
+    line-height: 4vh;
+    height: 24vh;
+    width: 20vh;
+    margin-top: 38vh;
+    vertical-align: top;
+}
+#replayBtn {
+    margin-right: 0.3vh;
+    border-top-left-radius: 2vh;
+    border-bottom-left-radius: 2vh;
+}
+#startNewGameBtn {
+    margin-left: 0.3vh;
+    border-top-right-radius: 2vh;
+    border-bottom-right-radius: 2vh;
+}
