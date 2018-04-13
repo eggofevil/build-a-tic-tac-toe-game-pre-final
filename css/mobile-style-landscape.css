@@ -1,0 +1,80 @@
+@media (orientation: landscape) and (max-width: 736px) {
+    :root {
+        --half-rem-vw: calc((100vw - 99vh)/2);
+    }
+    .splashScr {
+        height: 99vh;
+        width: 99vh;
+        margin-top: 0.5vh;
+        border-radius: 0;
+    }
+    #startScr {
+        padding-top: 33vh;
+    }
+    #startScr button {
+        width: 49.5vh;
+        height: 33vh;
+        font-size: 8vh;
+    }
+    #chooseSideScr {
+        padding-top: 11vh;
+    }
+    #chooseSideScr div {
+        font-size: 22vh;
+        height: 22vh;
+        line-height: 22vh;
+    }
+    #chooseSideScr button {
+        height: 33vh;
+        width: 33vh;
+        font-size: 16vh;
+    }
+    #chooseSideScr span {
+        font-size: 16vh;
+        height: 33vh;
+        line-height: 16vh;
+    }
+    #backBtn {
+        margin-top: 4vh;
+        height: 20vh !important;
+        width: 36vh !important;
+        font-size: 7vh !important;
+    }
+    .ln {
+        height: 33vh;
+        width: 100%;
+
+    }
+    .cell {
+        height: 100%;
+        width: 33vh;
+        font-size: 28vh;
+    }
+    .restartBtns {
+        margin-top: 0.5vh;
+        font-size: 8vh;
+        line-height: 8vh;
+        height: 99vh;
+        width: calc(var(--half-rem-vw) - 1vh);
+    }
+    #replayBtn {
+        margin-right: 0.5vh;
+        border-top-left-radius: 2vh;
+        border-bottom-left-radius: 2vh;
+    }
+    #startNewGameBtn {
+        margin-left: 0.5vh;
+        border-top-right-radius: 2vh;
+        border-bottom-right-radius: 2vh;
+    }
+    #endScr {
+        left: calc((100vw - 99vh) / 2);
+        padding-top: 40vh;
+        line-height: 16vh;
+        font-size: 20vh;
+        font-weight: normal;
+        text-shadow: 0.4vh 0.4vh 0.5vh #000000,
+            -0.1vh -0.1vh 0vh #000000;
+    }
+    
+}

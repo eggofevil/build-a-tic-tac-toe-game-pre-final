@@ -2,11 +2,12 @@ var onePlayerBtn = document.getElementById('onePlayerBtn');
 var twoPlayersBtn = document.getElementById('twoPlayersBtn');
 var startScr = document.getElementById('startScr');
 var chooseSideScr = document.getElementById('chooseSideScr');
-var endScr = document.getElementById('endScr');
-var sideBtns = Array.prototype.slice.call(document.getElementsByClassName('sideBtns'));
 var backBtn = document.getElementById('backBtn');
+var sideBtns = Array.prototype.slice.call(document.getElementsByClassName('sideBtns'));
 var replayBtn = document.getElementById('replayBtn');
 var startNewGameBtn = document.getElementById('startNewGameBtn');
+var playingField = document.getElementById('playingField');
+var endScr = document.getElementById('endScr');
 
 var cells;
 var symbol;
@@ -19,12 +20,17 @@ var lines;
 
 var logStr;
 
+playingField.style.display = 'none';
+replayBtn.style.display = 'none';
+startNewGameBtn.style.display = 'none';
+
 function returnToStart () {
     startScr.style.display = 'block';
     chooseSideScr.style.display = 'none';
-    endScr.style.display = 'none';
+    playingField.style.display = 'none';
     replayBtn.style.display = 'none';
     startNewGameBtn.style.display = 'none';
+    endScr.style.display = 'none';
 }
 
 function initialize () {
@@ -110,10 +116,6 @@ function turn () {
     if (aiTurn) turn();
 }
 
-
-
-
-
 function Line (cell1, cell2, cell3) {
     this.cells = [cell1, cell2, cell3];
     this.emptyCells = function () {
@@ -148,14 +150,16 @@ onePlayerBtn.addEventListener('click', function () {
 
 twoPlayersBtn.addEventListener('click', function () {
     startScr.style.display = 'none';
-    startNewGameBtn.style.display = 'inline-block';
-    replayBtn.style.display = 'inline-block';
+    playingField.style.display = '';
+    startNewGameBtn.style.display = '';
+    replayBtn.style.display = '';
     aiSymbol = undefined;
     initialize();
 });
     
 sideBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
+        playingField.style.display = 'inline-block';
         replayBtn.style.display = 'inline-block';
         startNewGameBtn.style.display = 'inline-block';
         userSymbol = btn.textContent;
