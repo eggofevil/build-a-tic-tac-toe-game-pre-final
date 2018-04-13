@@ -8,13 +8,26 @@
         margin-top: 0.5vh;
         border-radius: 0;
     }
-    #startScr {
-        padding-top: 33vh;
+    #startScr div {
+        padding-top: 4.5vh;
+        height: 33vh;
+        line-height: 12vh;
+    }
+    h3 {
+        font-size: 11vh;
     }
     #startScr button {
         width: 49.5vh;
         height: 33vh;
         font-size: 8vh;
+    }
+    address {
+        height: 33vh;
+        line-height: 33vh;
+        font-size: 4vh;
+    }
+    a {
+        font-size: 4vh;
     }
     #chooseSideScr {
         padding-top: 11vh;

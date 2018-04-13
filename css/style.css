@@ -37,12 +37,31 @@ button {
 }
 #startScr {
     display: block;
-    padding-top: 29vh;
+}
+#startScr div {
+    height: 24vh;
+}
+h3 {
+    font-size: 8vh;
+    color: orangered;
+    text-shadow: 0.4vh 0.4vh 0.3vh #0c0c0c,
+        -0.2vh -0.2vh 0.3vh #0c0c0c;
 }
 #startScr button {
-    height: 14vh;
+    height: 24vh;
     width: 36vh;
     font-size: 6.5vh;
+}
+address, a {
+    font-size: 2.5vh;
+    font-weight: normal;
+}
+address {
+    height: 24vh;
+    line-height: 24vh;
+}
+a {
+    color: orangered;
 }
 #chooseSideScr {
     display: none;
