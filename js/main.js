@@ -19,6 +19,7 @@ var line1, line2, line3, line4, line5, line6, line7, line8;
 var lines;
 
 var logStr;
+var points;
 
 playingField.style.display = 'none';
 replayBtn.style.display = 'none';
@@ -35,12 +36,12 @@ function returnToStart () {
 
 function initialize () {
     endScr.style.display = 'none';
-    endScr.textContent = '';
-    endScr.style.fontSize = '';
     endScr.style.color = '';
     endScr.style.paddingTop = '';
-    endScr.style.textShadow = '';
+    endScr.style.fontSize = '';
+    endScr.style.lineHeight = '';
     endScr.style.fontWeight = '';
+    endScr.style.textShadow = '';
     cells = Array.prototype.slice.call(document.getElementsByClassName('cell'));
     line1 = new Line (cells[0], cells[1], cells[2]);
     line2 = new Line (cells[3], cells[4], cells[5]);
@@ -73,9 +74,11 @@ function checkStatus() {
                     endScr.textContent = 'You win!';
                     endScr.style.color = 'orange';
                     endScr.style.paddingTop = '1vh';
-                    endScr.style.fontSize = '4vh';
+                    window.orientation === 0 ? points = 'vw' : points = 'vh';
+                    endScr.style.fontSize = '7.5' + points;
+                    endScr.style.lineHeight = '7.5' + points;
                     endScr.style.fontWeight = 'bold';
-                    endScr.style.textShadow = '0.15vh 0.15vh #000000'
+                    endScr.style.textShadow = '0.15vh 0.15vh #000000, -0.1vh -0.1vh #000000';
                     endScr.innerText += logStr;
                 }
             } else {
