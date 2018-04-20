@@ -3,11 +3,20 @@ var twoPlayersBtn = document.getElementById('twoPlayersBtn');
 var startScr = document.getElementById('startScr');
 var chooseSideScr = document.getElementById('chooseSideScr');
 var backBtn = document.getElementById('backBtn');
-var sideBtns = Array.prototype.slice.call(document.getElementsByClassName('sideBtns'));
+var sideBtns = Array.prototype.slice.call(document.getElementsByClassName('sideBtn'));
+var infoScr = document.getElementById('infoScr');
+var turnInfoScr = document.getElementById('turnInfoScr');
+var player1ScoreScr = document.getElementById('player1ScoreScr');
+var player2ScoreScr = document.getElementById('player2ScoreScr');
+var aiLvlScr = document.getElementById('aiLvlScr');
+var aiLvlBtns = Array.prototype.slice.call(document.getElementsByClassName('aiLvlBtn'));
 var replayBtn = document.getElementById('replayBtn');
 var startNewGameBtn = document.getElementById('startNewGameBtn');
 var playingField = document.getElementById('playingField');
 var endScr = document.getElementById('endScr');
+var footer = document.getElementById('footer');
+
+var splashEls = Array.prototype.slice.call(document.getElementsByClassName('splashEl'));
 
 var cells;
 var symbol;
@@ -17,31 +26,49 @@ var aiSymbol;
 var userSymbol;
 var line1, line2, line3, line4, line5, line6, line7, line8;
 var lines;
+var player1Score;
+var player2Score;
+var aiLvl;
 
-var logStr;
-var points;
+returnToStart();
 
-playingField.style.display = 'none';
-replayBtn.style.display = 'none';
-startNewGameBtn.style.display = 'none';
-
-function returnToStart () {
-    startScr.style.display = 'block';
+function returnToStart() {
+    startScr.style.display = '';
+    endScr.style.display = 'none';
     chooseSideScr.style.display = 'none';
     playingField.style.display = 'none';
+    infoScr.style.display = 'none';
+    aiLvlScr.style.display = 'none';
     replayBtn.style.display = 'none';
     startNewGameBtn.style.display = 'none';
-    endScr.style.display = 'none';
+    footer.style.display = 'none';
+    aiLvl = undefined;
+}
+function setAiLvl() {
+    aiLvl = this.innerText;
+    aiLvlBtns.forEach(function (btn) {
+        btn.innerText === aiLvl ? btn.style.color = '#e8e8e8' : btn.style.color = '';
+    });
+}
+function gameInitialize () {
+    if (aiSymbol !== undefined) {
+        player1ScoreScr.innerText = 'Player\nscore:\n0';
+        player2ScoreScr.innerText = 'AI\nscore:\n0';
+        aiLvl = 'Easy';
+        aiLvlBtns.forEach(function (btn) {
+            btn.innerText === aiLvl ? btn.style.color = '#e8e8e8' : btn.style.color = '';
+        });
+    } else {
+        player1ScoreScr.innerText = 'Player X\nscore:\n0';
+        player2ScoreScr.innerText = 'Player 0\nscore:\n0';
+    }
+    player1Score = 0;
+    player2Score = 0;
+    roundInitialize();
 }
 
-function initialize () {
+function roundInitialize () {
     endScr.style.display = 'none';
-    endScr.style.color = '';
-    endScr.style.paddingTop = '';
-    endScr.style.fontSize = '';
-    endScr.style.lineHeight = '';
-    endScr.style.fontWeight = '';
-    endScr.style.textShadow = '';
     cells = Array.prototype.slice.call(document.getElementsByClassName('cell'));
     line1 = new Line (cells[0], cells[1], cells[2]);
     line2 = new Line (cells[3], cells[4], cells[5]);
@@ -55,13 +82,25 @@ function initialize () {
     cells.forEach(function (cell) {
         cell.style.background = 'none';
         cell.textContent = '';
-        cell.addEventListener('click', turn);
     });
     symbol = 'X';
     index = 0;
     aiTurn = undefined;
-    aiSymbol === 'X' ? aiTurn = true : aiSymbol === '0' ? aiTurn = false : void null;
-    if(aiTurn) turn();
+    if (aiSymbol === 'X') {
+        aiTurn = true;
+        turnInfoScr.innerText = 'It\'s\nAI\nturn';
+        turn();
+        return null;
+    }
+    if (aiSymbol === '0') {
+        aiTurn = false;
+        turnInfoScr.innerText = 'It\'s\nyour\nturn';
+    } else {
+        turnInfoScr.innerText = '\nX turn';
+    }
+    cells.forEach(function (cell) {
+        cell.addEventListener('click', turn);   
+    });
 }
 
 function checkStatus() {
@@ -70,22 +109,22 @@ function checkStatus() {
             if (aiTurn !== undefined) {
                 if (lines[i].finished() === aiSymbol + aiSymbol + aiSymbol) {
                     endScr.textContent = 'AI wins!';
+                    player2Score++;
+                    player2ScoreScr.innerText = 'AI\nscore:\n' + player2Score;
                 } else {
                     endScr.textContent = 'You win!';
-                    endScr.style.color = 'orange';
-                    endScr.style.paddingTop = '1vh';
-                    window.orientation === 0 ? points = 'vw' : points = 'vh';
-                    endScr.style.fontSize = '7.5' + points;
-                    endScr.style.lineHeight = '7.5' + points;
-                    endScr.style.fontWeight = 'bold';
-                    endScr.style.textShadow = '0.15vh 0.15vh #000000, -0.1vh -0.1vh #000000';
-                    endScr.innerText += logStr;
+                    player1Score++;
+                    player1ScoreScr.innerText = 'Player\nscore:\n' + player1Score;
                 }
             } else {
                 if (lines[i].finished() === 'XXX') {
                     endScr.textContent = 'X wins!';
+                    player1Score++;
+                    player1ScoreScr.innerText = 'Player X\nscore:\n' + player1Score;
                 } else {
                     endScr.textContent = '0 wins!';
+                    player2Score++;
+                    player2ScoreScr.innerText = 'Player 0\nscore:\n' + player2Score;
                 }
             }
             return true;   
@@ -103,20 +142,32 @@ function turn () {
         aiTurn = false;
     } else {
         index = cells.indexOf(this);
-        if (aiTurn === false) aiTurn = true;
+        if (aiTurn === false) {
+            cells.forEach(function (cell) {
+                cell.removeEventListener('click', turn);
+            });
+            aiTurn = true;   
+        }
     }
     cells[index].textContent = symbol;
     cells[index].removeEventListener('click', turn);
-        
-    logStr += '\n' + symbol + ' to ' + cells[index].id;
-    
     cells.splice(cells.indexOf(cells[index]), 1);
     if (checkStatus()) {
-        endScr.style.display = 'block';
+        roundEnd();
         return null;
     }
     symbol === 'X' ? symbol = '0' : symbol = 'X';
-    if (aiTurn) turn();
+    if (aiTurn === undefined) {
+        turnInfoScr.innerText = '\n' + symbol + ' turn';
+    } else if (!aiTurn) {
+        turnInfoScr.innerText = 'It\'s\nyour\nturn';
+        cells.forEach(function (cell) {
+            cell.addEventListener('click', turn); 
+        });
+    } else {
+        turnInfoScr.innerText = 'It\'s\nAI\nturn';
+        turn();
+    }
 }
 
 function Line (cell1, cell2, cell3) {
@@ -146,38 +197,46 @@ function Line (cell1, cell2, cell3) {
     }
 }
 
+function roundEnd() {
+    endScr.style.display = 'block';
+}
+
 onePlayerBtn.addEventListener('click', function () {
     startScr.style.display = 'none';
-    chooseSideScr.style.display = 'block';
+    chooseSideScr.style.display = '';
+    footer.style.display = '';
 });
 
 twoPlayersBtn.addEventListener('click', function () {
     startScr.style.display = 'none';
+    infoScr.style.display = '';
     playingField.style.display = '';
-    startNewGameBtn.style.display = '';
     replayBtn.style.display = '';
+    startNewGameBtn.style.display = '';
+    footer.style.display = '';
     aiSymbol = undefined;
-    initialize();
+    gameInitialize();
 });
     
 sideBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
-        playingField.style.display = 'inline-block';
-        replayBtn.style.display = 'inline-block';
-        startNewGameBtn.style.display = 'inline-block';
+        chooseSideScr.style.display = 'none';
+        infoScr.style.display = '';
+        aiLvlScr.style.display = '';
+        playingField.style.display = '';
+        replayBtn.style.display = '';
+        startNewGameBtn.style.display = '';
         userSymbol = btn.textContent;
         userSymbol === 'X' ? aiSymbol = '0' : aiSymbol = 'X';
-        
-        logStr = '\naiSymbol - ' + aiSymbol + ', userSymbol - ' + userSymbol; 
-        
         aiSymbol === 'X' ? aiTurn = true : aiTurn = false;
-        chooseSideScr.style.display = 'none';
-        initialize();
+        gameInitialize();
     });
 });
-
 backBtn.addEventListener('click', returnToStart);
-
-startNewGameBtn.addEventListener('click', returnToStart);
-
-replayBtn.addEventListener('click', initialize);
+aiLvlBtns.forEach(function (btn) {
+    btn.addEventListener('click', setAiLvl);
+});
+startNewGameBtn.addEventListener('click', returnToStart)
+replayBtn.addEventListener('click', function () {
+    roundInitialize();
+});

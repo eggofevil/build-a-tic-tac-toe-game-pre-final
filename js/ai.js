@@ -26,6 +26,18 @@ function rule2 (currSymbol) {
     if (potentialTurns.length === 0) return undefined;
     return cells.indexOf(potentialTurns[Math.floor(Math.random() * potentialTurns.length)]);
 }
+function rule3 (currSymbol) {
+    var potentialTurns = [];
+    for (var i in lines) {
+        if (lines[i].str() === currSymbol) {
+            lines[i].emptyCells().forEach(function (emptyCell) {
+               if (potentialTurns.indexOf(emptyCell) === -1) potentialTurns.push(emptyCell); 
+            });
+        }
+    }
+    if (potentialTurns.length === 0) return undefined;
+    return cells.indexOf(potentialTurns[Math.floor(Math.random() * potentialTurns.length)]);
+}
 function previsionRule () {
     var potentialTurns = [];
     for (var i in cells) {
@@ -84,6 +96,12 @@ function aITryToWin() {
     if (!isNaN(currIndex)) return currIndex;
     currIndex = rule2(symbol);
     if (!isNaN(currIndex)) return currIndex;
-    currIndex = previsionRule();
-    if (!isNaN(currIndex)) return currIndex;
+    if (aiLvl === 'Hard') {
+        currIndex = previsionRule();
+        if (!isNaN(currIndex)) return currIndex;
+    } else {
+        currIndex = rule3(symbol);
+        if (!isNaN(currIndex)) return currIndex;
+        return cells.indexOf(cells[Math.floor(Math.random() * cells.length)]);
+    }
 }

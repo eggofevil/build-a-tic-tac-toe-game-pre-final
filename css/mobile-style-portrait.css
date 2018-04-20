@@ -1,100 +1,108 @@
-@media (orientation: portrait) {
-    :root {
-        --half-rem-vh: calc((100vh - 99vw)/2);
+@media (orientation: portrait)  and (max-aspect-ratio: 5/7) {
+    article {
+        width: 100vw;
     }
-    .splashScr {
-        height: 99vw;
+    .splashEl {
         width: 99vw;
-        margin-top: var(--half-rem-vh);
-        border-radius: 0;
+        margin: 0 auto;
+    }
+    .square {
+        height: 99vw;
+        margin-top: calc((100vh - 99vw)/2);
+    }
+    button {
+        border-width: 0.5vw;
     }
     #startScr div {
-        padding-top: 4.5vw;
-        height: 33vw;
-        line-height: 12vw;
+        height: 39.5vw;
+        line-height: 19.25vw;
     }
     h3 {
-        font-size: 11vw;
+        font-size: 14vw;
     }
-    #startScr button {
-        height: 33vw;
-        width: 49.5vw;
-        font-size: 9vw;
+    #startScr Button {
+        height: 20vw;
+        width: 50%;
+        font-size: 10vw;
     }
-    address {
-        height: 33vw;
-        padding-top: 10.5vw;
-        line-height: 6vw;
-        font-size: 6vw;
+    address, a {
+        font-size: 4.5vw;
     }
-    a {
-        font-size: 6vw;
-    }
-    #chooseSideScr {
-        padding-top: 0;
+    #startScr address {
+        height: 39.5vw;
+        line-height: 39.5vw;
     }
     #chooseSideScr div {
-        font-size: 34vw;
-        height: 34.5vw;
-        line-height: 34vw;
+        margin-top: 19.5vw;
+        height: 20vw;
+        font-size: 20vw;
+        line-height: 20vw;
     }
     #chooseSideScr button {
-        height: 30vw;
-        width: 30vw;
+        height: 20vw;
+        width: 20vw;
         font-size: 14vw;
     }
     #chooseSideScr span {
-        display: inline-block;
+        height: 20vw;
+        width: 24vw;
+        line-height: 20vw;
         font-size: 14vw;
-        height: 30vw;
-        line-height: 18vw;
-        padding: 0 2vw;
-        padding-right: 3vw;
     }
     #backBtn {
-        margin-top: 0vw;
-        height: 20vw !important;
-        width: 37vw !important;
-        text-align: left;
+        margin-top: 2vw;
+    }
+    #infoScr {
+        height: calc((100vh - 100vw)/2);
+        width: 66vw;
+        margin-left: 0.5vw;
+        border-width: 0.5vw;
+    }
+    #infoScr div {
+        margin-top: calc(((100vh - 100vw)/2 - 15vh)/2);
+        height: 15vh;
+        width: 21vw;
+        font-size: 5vw;
+        line-height: 5vh;
+    }
+    #turnInfoScr {
         font-size: 7vw !important;
     }
-    .ln {
-        height: 33vw;
+    
+    #aiLvlScr {
+        height: calc((100vh - 100vw)/2);
+        width: 33vw;
+        border-width: 0.5vw;
     }
+    #aiLvlScr * {
+        height: calc((100vh - 100vw)/6);
+    }
+    #aiLvl {
+        font-size: 7vw;
+        line-height: calc((100vh - 100vw)/6);
+    }
+    #aiLvlScr button {
+        width: 32vw;
+        font-size: 5vw;
+    }
+    
     .cell {
         height: 33vw;
         width: 33vw;
+        border-width: 0.5vw;
         font-size: 29vw;
     }
-    #playingField {
-        display: block;
-        margin: 0;
-        margin-top: 0.5vh;
-    }
     .restartBtns {
-        display: block;
-        margin: 0;
-        height: calc(var(--half-rem-vh) - 0.5vh);
-        width: 99vw;
-    }
-    #replayBtn {
-        margin-left: 0.5vw;
-        border-radius: 0;
-        border-top-right-radius: 2vh;
-        border-top-left-radius: 2vh;
-    }
-    #startNewGameBtn {
-        margin-top: 0.5vh;
-        margin-right: 0.5vw;
-        margin-left: 0.5vw;
-        border-radius: 0;
-        border-bottom-right-radius: 2vh;
-        border-bottom-left-radius: 2vh;
+        height: calc((100vh - 100vw)/4);
+        width: 49.5vw;
+        font-size: 6vw;
     }
     #endScr {
-        left: 0.5vw;
-        padding-top: 39.5vw;
-        line-height: 20vw;
-        font-size: 20vw;
+        line-height: 99vw;
+        font-size: 16vw;
+    }
+    #footer {
+        height: calc((100vh - 100vw)/4);
+        line-height: calc((100vh - 100vw)/4);
     }
 }

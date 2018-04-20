@@ -1,93 +1,134 @@
-@media (orientation: landscape) and (max-width: 736px) {
-    :root {
-        --half-rem-vw: calc((100vw - 99vh)/2);
-    }
-    .splashScr {
-        height: 99vh;
-        width: 99vh;
-        margin-top: 0.5vh;
-        border-radius: 0;
-    }
-    #startScr div {
-        padding-top: 4.5vh;
-        height: 33vh;
-        line-height: 12vh;
-    }
-    h3 {
-        font-size: 11vh;
-    }
-    #startScr button {
-        width: 49.5vh;
-        height: 33vh;
-        font-size: 8vh;
-    }
-    address {
-        height: 33vh;
-        line-height: 33vh;
-        font-size: 4vh;
-    }
-    a {
-        font-size: 4vh;
-    }
-    #chooseSideScr {
-        padding-top: 11vh;
-    }
-    #chooseSideScr div {
-        font-size: 22vh;
-        height: 22vh;
-        line-height: 22vh;
-    }
-    #chooseSideScr button {
-        height: 33vh;
-        width: 33vh;
-        font-size: 16vh;
-    }
-    #chooseSideScr span {
-        font-size: 16vh;
-        height: 33vh;
-        line-height: 16vh;
-    }
-    #backBtn {
-        margin-top: 4vh;
-        height: 20vh !important;
-        width: 36vh !important;
-        font-size: 7vh !important;
-    }
-    .ln {
-        height: 33vh;
-        width: 100%;
-
-    }
-    .cell {
-        height: 100%;
-        width: 33vh;
-        font-size: 28vh;
-    }
-    .restartBtns {
-        margin-top: 0.5vh;
-        font-size: 8vh;
-        line-height: 8vh;
-        height: 99vh;
-        width: calc(var(--half-rem-vw) - 1vh);
-    }
-    #replayBtn {
-        margin-right: 0.5vh;
-        border-top-left-radius: 2vh;
-        border-bottom-left-radius: 2vh;
-    }
-    #startNewGameBtn {
-        margin-left: 0.5vh;
-        border-top-right-radius: 2vh;
-        border-bottom-right-radius: 2vh;
-    }
-    #endScr {
-        left: calc((100vw - 99vh) / 2);
-        padding-top: 40vh;
-        line-height: 16vh;
-        font-size: 20vh;
-        font-weight: normal;
-        text-shadow: 0.4vh 0.4vh 0.5vh #000000,
-            -0.1vh -0.1vh 0vh #000000;
+@media (orientation: landscape) and (max-width: 980px)  and (min-aspect-ratio: 4/3) {
+    article {
+        width: 100vw;
+        vertical-align: top;
     }
     
+    .splashEl {
+        width: 87vh;
+        margin-top: 0.5vh;
+    }
+    .square {
+        height: 87vh;
+        margin-left: calc((100vw - 87vh)/2);
+        border: 0.5vh solid #A9A9A9;
+    }
+    button {
+        border-width: 0.5vh;
+    }
+    #startScr {
+        height: 99vh;
+        width: 99vh;
+        margin-left: calc((100vw - 99vh)/2);
+    }
+    #startScr div {
+        height: 40vh;
+        line-height: 20vh;
+    }
+    h3 {
+        font-size: 14vh;
+    }
+    #startScr button {
+        height: 18vh;
+        width: 50%;
+        font-size: 8vh;
+    }
+    address, a {
+        font-size: 4vh;
+    }
+    #startScr address {
+        height: 40vh;
+        line-height: 40vh;
+    }
+    #chooseSideScr div {
+        margin-top: 15.5vh;
+        height: 20vh;
+        line-height: 20vh;
+        font-size: 20vh;
+    }
+    #chooseSideScr button {
+        height: 16vh;
+        width: 16vh;
+        font-size: 10vh;
+    }
+    #chooseSideScr span {
+        height: 16vh;
+        width: 20vh;
+        line-height: 16vh;
+        font-size: 10vh;
+    }
+    #backBtn {
+        margin-top: 2vh;
+    }
+    #infoScr {
+        position: absolute;
+        left: 0;
+        height: 99vh;
+        width: calc((100vw - 87vh)/2);
+        border-top: 0.5vh solid #A9A9A9;
+        border-bottom: 0.5vh solid #A9A9A9;
+    }
+    #infoScr div {
+        display: block;
+        height: 33vh;
+        width: 100%;
+        padding-top: 4.5vh;
+        line-height: 8vh;
+        font-size: 4vh;
+    }
+    #turnInfoScr {
+        width: 100% !important;
+        font-size: 5.5vh !important;
+    }
+    #playingField {
+        margin-top: 0.5vh;
+        border-width: 0vh;
+    }
+    #aiLvlScr {
+        position: absolute;
+        right: 0;
+        height: 49.5vh;
+        width: calc((100vw - 87vh)/2);
+    }
+    #aiLvlScr * {
+        height: 16vh;
+    }
+    #aiLvl {
+        font-size: 6vh;
+        line-height: 16vh;
+    }
+    #aiLvlScr button {
+        width: 70%;
+        font-size: 4vh;
+    }
+    .cell {
+        height: 29vh;
+        width: 29vh;
+        font-size: 26vh;
+    }
+    .restartBtns {
+        position: absolute;
+        right: 0;
+        height: 24.75vh;
+        width: calc((100vw - 87vh)/2);
+        font-size: 5vh;
+ 
+    }
+    #replayBtn {
+        top: 49.5vh;
+    }
+    #startNewGameBtn {
+        top: 74.25vh;
+    }
+    #endScr {
+        z-index: 1;
+        line-height: 87vh;
+    }
+    #footer {
+        margin: 0 auto;
+        height: 12vh;
+        line-height: 12vh;
+        background: #d3d3d3;
+        border: 0.5vh solid #A9A9A9;
+    }
 }

@@ -41,7 +41,6 @@
         <!-- /Yandex.Metrika counter -->
         <meta charset="utf-8">
         <title>AG Tic Tac Toe Game</title>
-        <meta name="viewport" content="width=device-width">
         <meta name="author" content="A.Gurin">
         <meta name="description" content="tic tac toe game">
         <meta name="keywords" content="tic tac toe">
@@ -54,44 +53,50 @@
     <body>
         <article>
             <h1>AG Tic Tac Toe Game</h1>
-            <section>
-                <h2>Game screen</h2>
-                <button id="replayBtn" class="restartBtns splashBtn">Replay</button>
-                <div id="startScr" class="splashScr">
-                    <div id="gameName">
-                        <h3>AG Tic Tac Toe Game</h3>
-                    </div>
-                    <button id="onePlayerBtn" class="modeBtns">1 Player</button>
-                    <button id="twoPlayersBtn" class="modeBtns">2 Players</button>
-                    <address>Created by A.Gurin: <a href="mailto:nucleusofgood@gmail.com">nucleusofgood@gmail.com</a></address>
+            <div id="startScr" class="splashEl square">
+                <div id="gameName">
+                    <h3>AG Tic Tac Toe Game</h3>
                 </div>
-                <div id="chooseSideScr" class="splashScr">
-                    <div>?</div>
-                    <button id="xBtn" class="modeBtns sideBtns">X</button>
-                    <span>OR</span>
-                    <button id="oBtn" class="modeBtns sideBtns">0</button>
-                    <button id="backBtn">&nbsp;&lArr; Back</button>
-                </div>
-                <div id="playingField" class="splashScr">
-                    <div id="ln1" class="ln">
-                        <div id="ln1Col1" class="ln1 col1 cell"></div>
-                        <div id="ln1Col2" class="ln1 col2 cell"></div>
-                        <div id="ln1Col3" class="ln1 col3 cell"></div>
-                    </div>
-                    <div id="ln2" class="ln">
-                        <div id="ln2Col1" class="ln2 col1 cell"></div>
-                        <div id="ln2Col2" class="ln2 col2 cell"></div>
-                        <div id="ln2Col3" class="ln2 col3 cell"></div>
-                    </div>
-                    <div id="ln3" class="ln">
-                        <div id="ln3Col1" class="ln3 col1 cell"></div>
-                        <div id="ln3Col2" class="ln3 col2 cell"></div>
-                        <div id="ln3Col3" class="ln3 col3 cell"></div>
-                    </div>
-                </div>
-                <div id="endScr" class="splashScr"></div>
-                <button id="startNewGameBtn" class="restartBtns splashBtn">Start new game</button>
-            </section>
+                <button id="onePlayerBtn">1 Player</button>
+                <button id="twoPlayersBtn">2 Players</button>
+                <address>
+                    Created by A.Gurin: <a href="mailto:nucleusofgood@gmail.com">nucleusofgood@gmail.com</a>
+                </address>
+            </div>
+            <div id="chooseSideScr" class="splashEl square">
+                <div>?</div>
+                <button id="xBtn" class="sideBtn">X</button>
+                <span>OR</span>
+                <button id="oBtn" class="sideBtn">0</button>
+                <button id="backBtn">&lArr;</button>
+            </div>
+            <div id="endScr" class="splashEl square"></div>
+            <div id="infoScr" class="splashEl">
+                <div id="player1ScoreScr"></div>
+                <div id="turnInfoScr"></div>
+                <div id="player2ScoreScr"></div>
+            </div>
+            <div id="aiLvlScr">
+                <div id="aiLvl">AI lvl</div>
+                <button id="easyBtn" class="aiLvlBtn">Easy</button>
+                <button id="hardBtn" class="aiLvlBtn">Hard</button>
+            </div>
+            <div id="playingField" class="splashEl square">
+                <div id="ln1Col1" class="cell"></div>
+                <div id="ln1Col2" class="cell"></div>
+                <div id="ln1Col3" class="cell"></div>
+                <div id="ln2Col1" class="cell"></div>
+                <div id="ln2Col2" class="cell"></div>
+                <div id="ln2Col3" class="cell"></div>
+                <div id="ln3Col1" class="cell"></div>
+                <div id="ln3Col2" class="cell"></div>
+                <div id="ln3Col3" class="cell"></div>
+            </div>
+            <button id="replayBtn" class="restartBtns splashEl">Replay</button>
+            <button id="startNewGameBtn" class="restartBtns splashEl">Start new game</button>
+            <address id="footer" class="splashEl">
+                Created by A.Gurin: <a href="mailto:nucleusofgood@gmail.com">nucleusofgood@gmail.com</a>
+            </address>
         </article>
     </body>
     <script type="text/javascript" src="js/main.js">
