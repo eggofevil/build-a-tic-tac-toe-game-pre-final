@@ -1,20 +1,16 @@
 @media (orientation: landscape) and (max-width: 980px)  and (min-aspect-ratio: 4/3) {
     article {
         width: 100vw;
-        vertical-align: top;
     }
     
     .splashEl {
         width: 87vh;
-        margin-top: 0.5vh;
     }
     .square {
         height: 87vh;
         margin-left: calc((100vw - 87vh)/2);
-        border: 0.5vh solid #A9A9A9;
-    }
-    button {
-        border-width: 0.5vh;
+        margin-top: 0.5vh;
+        border: 0.5vh solid #a9a9a9;
     }
     #startScr {
         height: 99vh;
@@ -43,8 +39,8 @@
     #chooseSideScr div {
         margin-top: 15.5vh;
         height: 20vh;
-        line-height: 20vh;
         font-size: 20vh;
+        line-height: 20vh;
     }
     #chooseSideScr button {
         height: 16vh;
@@ -62,33 +58,30 @@
     }
     #infoScr {
         position: absolute;
-        left: 0;
+        left: 0.5vh;
         height: 99vh;
-        width: calc((100vw - 87vh)/2);
-        border-top: 0.5vh solid #A9A9A9;
-        border-bottom: 0.5vh solid #A9A9A9;
+        width: calc((100vw - 87vh)/2 - 0.5vh);
     }
     #infoScr div {
-        display: block;
-        height: 33vh;
+        height: 29vh;
         width: 100%;
-        padding-top: 4.5vh;
-        line-height: 8vh;
+        margin: 0;
+        padding-top: 8.5vh;
         font-size: 4vh;
     }
-    #turnInfoScr {
-        width: 100% !important;
-        font-size: 5.5vh !important;
+    #player1ScoreScr {
+        border-top: 0.5vh solid #a9a9a9;
     }
     #playingField {
+        border: none;
         margin-top: 0.5vh;
-        border-width: 0vh;
     }
-    #aiLvlScr {
+    #aiLvlScr, #placeHolder {
         position: absolute;
-        right: 0;
-        height: 49.5vh;
-        width: calc((100vw - 87vh)/2);
+        top: 1vh;
+        right: 0.5vh;
+        height: 48.5vh;
+        width: calc((100vw - 87vh)/2 - 0.5vh);
     }
     #aiLvlScr * {
         height: 16vh;
@@ -101,24 +94,14 @@
         width: 70%;
         font-size: 4vh;
     }
+    #placeHolder {
+        font-size: 20vh;
+        line-height: 48.5vh;
+    }
     .cell {
         height: 29vh;
         width: 29vh;
         font-size: 26vh;
-    }
-    .restartBtns {
-        position: absolute;
-        right: 0;
-        height: 24.75vh;
-        width: calc((100vw - 87vh)/2);
-        font-size: 5vh;
- 
-    }
-    #replayBtn {
-        top: 49.5vh;
-    }
-    #startNewGameBtn {
-        top: 74.25vh;
     }
     #endScr {
         z-index: 1;
@@ -130,5 +113,20 @@
         line-height: 12vh;
         background: #d3d3d3;
         border: 0.5vh solid #A9A9A9;
+    }
+    /*difference with fcc version*/
+    .restartBtns {
+        position: absolute;
+        right: 1vh;
+        height: 24.25vh;
+        width: calc((100vw - 87vh)/2 - 1.5vh);
+        font-size: 5vh;
+ 
+    }
+    #replayBtn {
+        top: 49.5vh;
+    }
+    #startNewGameBtn {
+        top: 74.25vh;
     }
 }

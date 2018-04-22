@@ -10,9 +10,6 @@
         height: 99vw;
         margin-top: calc((100vh - 99vw)/2);
     }
-    button {
-        border-width: 0.5vw;
-    }
     #startScr div {
         height: 39.5vw;
         line-height: 19.25vw;
@@ -55,21 +52,15 @@
     #infoScr {
         height: calc((100vh - 100vw)/2);
         width: 66vw;
-        margin-left: 0.5vw;
         border-width: 0.5vw;
     }
     #infoScr div {
-        margin-top: calc(((100vh - 100vw)/2 - 15vh)/2);
-        height: 15vh;
+        margin-top: calc(((100vh - 100vw)/2 - 15vw)/2);
+        height: 15vw;
         width: 21vw;
         font-size: 5vw;
-        line-height: 5vh;
     }
-    #turnInfoScr {
-        font-size: 7vw !important;
-    }
-    
-    #aiLvlScr {
+    #aiLvlScr, #placeHolder {
         height: calc((100vh - 100vw)/2);
         width: 33vw;
         border-width: 0.5vw;
@@ -79,13 +70,16 @@
     }
     #aiLvl {
         font-size: 7vw;
-        line-height: calc((100vh - 100vw)/6);
+        height: calc((100vh - 100vw)/6 - 0.5vw);
+        line-height: calc((100vh - 100vw)/6 - 0.5vw);
     }
     #aiLvlScr button {
         width: 32vw;
         font-size: 5vw;
     }
-    
+    #placeHolder {
+        line-height: calc((100vh - 100vw)/2);
+    }
     .cell {
         height: 33vw;
         width: 33vw;
@@ -94,7 +88,7 @@
     }
     .restartBtns {
         height: calc((100vh - 100vw)/4);
-        width: 49.5vw;
+        width: 49vw;
         font-size: 6vw;
     }
     #endScr {

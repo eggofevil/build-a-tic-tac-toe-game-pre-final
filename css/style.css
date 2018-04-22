@@ -25,15 +25,11 @@ article {
 .square {
     height: 72vh;
 }
-
 button {
-    background-color: #999999 !important;
-    border-width: 0.25vh;
-    border-left-color: #afafaf;
-    border-top-color: #afafaf;
+    background-color: #999999;
+    border-color: #888888;
     outline-color: #191919;
-    box-shadow: 0.05vh 0.05vh #262626,
-        -0.05vh -0.05vh #262626;
+    border-width: 0.3vh;
 }
 #startScr div {
     height: 30vh;
@@ -41,7 +37,7 @@ button {
 }
 h3 {
     font-size: 12vh;
-    color: orangered;
+    color: #ff4500;
     text-shadow: 0.4vh 0vh 0.3vh #444444;
 }
 #startScr button {
@@ -58,7 +54,7 @@ address, a {
     line-height: 30vh;
 }
 a {
-    color: orangered;
+    color: #ff4500;
 }
 #chooseSideScr div {
     margin-top: 13vh;
@@ -83,6 +79,7 @@ a {
     display: block;
     margin: 0 auto;
     margin-top: 1vh;
+    line-height: 1;
 }
 #infoScr {
     display: inline-block;
@@ -95,26 +92,21 @@ a {
 }
 #infoScr div {
     display: inline-block;
-    height: 13.5vh;
-    width: 15vh;
-    line-height: 4.5vh;
-    color: #565656;
     font-size: 3.5vh;
+    height: 10.5vh;
+    margin-top: 1vh;
+    width: 15vh;
+    line-height: 1;
+    color: #565656;
 }
-#turnInfoScr {
-    font-size: 4.5vh !important;
-}
-#aiLvlScr {
+#aiLvlScr, #placeHolder {
     display: inline-block;
     height: 13.5vh;
     width: 24vh;
-    margin-top: 0.5vh;
-    border-bottom: 0.5vh solid #A9A9A9;
-    border-left: 0.5vh solid #A9A9A9;
-    border-right: 0.5vh solid #A9A9A9;
+    border-bottom: 0.5vh solid #a9a9a9;
 }
 #aiLvlScr * {
-    height: calc(13vh / 3);
+    height: calc(13vh/3);
 }
 #aiLvl {
     font-size: 4vh;
@@ -122,6 +114,16 @@ a {
 #aiLvlScr button {
     width: 23vh;
     font-size: 3vh;
+    margin-left: 0;
+}
+#placeHolder {
+    font-size: 8vh;
+    line-height: 13.5vh;
+    color: #ff4500;
+    text-shadow: 0.4vh 0vh 0.3vh #444444;
+    border-left: 0.5vh solid #a9a9a9;
+    border-right: 0.5vh solid #a9a9a9;
+    background: #6b6d79;
 }
 #playingField {
     margin-top: 0;
@@ -154,5 +156,5 @@ a {
     margin-top: 0;
     height: 6.5vh;
     line-height: 6.5vh;
-    background: #999999;
+    background: #A9A9A9;
 }
